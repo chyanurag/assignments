@@ -5,7 +5,15 @@
 */
 
 function isAnagram(str1, str2) {
-
+    let mp = new Map()
+    for(let c of str1.toLowerCase()) {
+        mp.set(c, (mp.get(c) ?? 0) + 1)
+    }
+    for(let c of str2.toLowerCase()){
+        mp.set(c, (mp.get(c) ?? 0) - 1)
+    }
+    return Array.from(mp.values()).every(x => x == 0)
 }
 
+console.log(isAnagram('abc!', '!cba'))
 module.exports = isAnagram;

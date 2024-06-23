@@ -4,7 +4,8 @@
 */
 
 function isPalindrome(str) {
-  return true;
+    let arr = str.toLowerCase().split('').filter(x => !['?', '!', ' ', ',', '.'].includes(x))
+    return arr.toReversed().join('') == arr.join('')
 }
 
 module.exports = isPalindrome;

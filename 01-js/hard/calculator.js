@@ -16,6 +16,46 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+    constructor(){
+        this.result = 0;
+    }
+
+    clear() {
+        this.result = 0
+    }
+    
+    add(num){
+        this.result += num
+    }
+    
+    subtract(num) {
+        this.result -= num
+    }
+
+    getResult() {
+        return this.result
+    }
+    
+    multiply(num) {
+        this.result *= num
+    }
+
+    divide(num) {
+        this.result /= num
+    }
+
+    calculate(input) {
+        for(let c of input){
+            if(c == ' ') {
+                continue
+            }
+            if(parseInt(c) == Number.NaN) {
+                throw 'Please input a numerical input';
+            }
+        }
+    }
+
+}
 
 module.exports = Calculator;

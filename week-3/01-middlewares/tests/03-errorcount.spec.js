@@ -2,6 +2,7 @@ const app = require("../03-errorcount");
 
 const request = require('supertest');
 const assert = require('assert');
+
 describe('GET /user', function() {
   it('Initial request responds with 0', function(done) {
     request(app)
